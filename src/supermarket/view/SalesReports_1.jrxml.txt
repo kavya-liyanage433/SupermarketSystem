@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="SalesReport" pageWidth="595" pageHeight="842"
+              columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20">
+
+    <queryString>
+        <![CDATA[SELECT s.sale_id, s.cashier_name, s.total_amount, s.sale_date,
+                        si.qty, si.unit_price, si.subtotal,
+                        p.name AS product_name
+                 FROM sale s
+                 JOIN sale_item si ON s.sale_id = si.sale_id
+                 JOIN product p ON si.product_id = p.product_id
+                 ORDER BY s.sale_date DESC]]>
+    </queryString>
+
+    <field name="sale_id" class="java.lang.Integer"/>
+    <field name="cashier_name" class="java.lang.String"/>
+    <field name="total_amount" class="java.lang.Double"/>
+    <field name="sale_date" class="java.sql.Timestamp"/>
+    <field name="qty" class="java.lang.Integer"/>
+    <field name="unit_price" class="java.lang.Double"/>
+    <field name="subtotal" class="java.lang.Double"/>
+    <field name="product_name" class="java.lang.String"/>
+
+    <title>
+        <band height="100">
+            <staticText>
+                <reportElement x="0" y="0" width="555" height="45"
+                               forecolor="#FFFFFF" backcolor="#172038" mode="Opaque"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="22" isBold="true"/>
+                </textElement>
+                <text><![CDATA[SUPERMARKET MANAGEMENT SYSTEM]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="45" width="555" height="30"
+                               forecolor="#FFFFFF" backcolor="#1e2a4a" mode="Opaque"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font fontName="SansSerif" size="14" isBold="tr

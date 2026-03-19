@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport 
+    xmlns="http://jasperreports.sourceforge.net/jasperreports"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports 
+                        http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+    name="SalesReports"
+    language="java"
+    pageWidth="842"
+    pageHeight="595"
+    columnWidth="800"
+    leftMargin="20"
+    rightMargin="20"
+    topMargin="20"
+    bottomMargin="20">
+
+    <!-- Fields -->
+    <field name="sale_id" class="java.lang.Integer"/>
+    <field name="sale_date" class="java.util.Date"/>
+    <field name="cashier_name" class="java.lang.String"/>
+    <field name="customer_name" class="java.lang.String"/>
+    <field name="customer_phone" class="java.lang.String"/>
+    <field name="product_name" class="java.lang.String"/>
+    <field name="product_price" class="java.lang.Double"/>
+    <field name="stock_qty" class="java.lang.Integer"/>
+    <field name="category_name" class="java.lang.String"/>
+    <field name="supplier_name" class="java.lang.String"/>
+    <field name="qty" class="java.lang.Integer"/>
+    <field name="unit_price" class="java.lang.Double"/>
+    <field name="subtotal" class="java.lang.Double"/>
+    <field name="total_amount" class="java.lang.Double"/>
+
+    <!-- Query -->
+    <queryString>
+        <![CDATA[
+        SELECT s.sale_id, s.sale_date, s.cashier_name,
+               c.name AS customer_name, c.phone AS customer_phone,
+               p.name AS product_name, p.price AS product_price, p.stock_qty,
+               cat.name AS category_name,
+               sup.name AS supplier_name,
+               si.qty, si.unit_price, si.subtotal,
+               s.total_amount
+        FROM sale_item si
+        JOIN sale s ON si.sale_id = s.sale_id
+        JOIN product p ON si.product_id = p.product_id
+        LEFT JOIN category cat ON p.category_id = cat.category_id
+        LEFT JOIN supplier sup ON p.supplier_id = sup.supplier_id
+        JOIN customer c ON s.customer_id = c.customer_id
+        ]]>
+    </queryString>
+
+    <background/>
+
+    <!-- TITLE -->
+    <title>
+        <band height="50">
+            <staticText>
+                <reportElement x="0" y="0" width="800" height="50"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Detailed Sales Report]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- COLUMN HEADER -->
+    <columnHeader>
+        <band height="50">
+            <staticText><reportElement x="0" y="0" width="50" height="50"/><text><![CDATA[Sale ID]]></text></staticText>
+            <staticText><reportElement x="50" y="0" width="80" height="50"/><text><![CDATA[Date]]></text></staticText>
+            <staticText><reportElement x="130" y="0" width="80" height="50"/><text><![CDATA[Cashier]]></text></staticText>
+            <staticText><reportElement x="210" y="0" width="100" height="50"/><text><![CDATA[Customer]]></text></staticText>
+            <staticText><reportElement x="310" y="0" width="80" height="50"/><text><![CDATA[Phone]]></text></staticText>
+            <staticText><reportElement x="390" y="0" width="100" height="50"/><text><![CDATA[Product]]></text></staticText>
+            <staticText><reportElement x="490" y="0" width="60" height="50"/><text><![CDATA[Price]]></text></staticText>
+            <staticText><reportElement x="550" y="0" width="40" height="50"/><text><![CDATA[Stock]]></text></staticText>
+            <staticText><reportElement x="590" y="0" width="80" height="50"/><text><![CDATA[Category]]></text></staticText>
+            <staticText><reportElement x="670" y="0" width="80" height="50"/><text><![CDATA[Supplier]]></text></staticText>
+            <staticText><reportElement x="750" y="0" width="50" height="50"/><text><![CDATA[Qty]]></text></staticText>
+            <staticText><reportElement x="800" y="0" width="60" height="50"/><text><![CDATA[Unit]]></text></staticText>
+            <staticText><reportElement x="860" y="0" width="60" height="50"/><text><![CDATA[Subtotal]]></text></staticText>
+            <staticText><reportElement x="920" y="0" width="60" height="50"/><text><![CDATA[Total]]></text></staticText>
+        </band>
+    </columnHeader>
+
+    <!-- DETAIL -->
+    <detail>
+        <band height="30">
+            <textField><reportElement x="0" y="0" width="50" height="30"/><textFieldExpression><![CDATA[$F{sale_id}]]></textFieldExpression></textField>
+            <textField><reportElement x="50" y="0" width="80" height="30"/><textFieldExpression><![CDATA[$F{sale_date}]]></textFieldExpression></textField>
+            <textField><reportElement x="130" y="0" width="80" height="30"/><textFieldExpression><![CDATA[$F{cashier_name}]]></textFieldExpression></textField>
+            <textField><reportElement x="210" y="0" width="100" height="30"/><textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression></textField>
+            <textField><reportElement x="310" y="0" width="80" height="30"/><textFieldExpression><![CDATA[$F{customer_phone}]]></textFieldExpression></textField>
+            <textField><reportElement x="390" y="0" width="100" height="30"/><textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression></textField>
+            <textField><reportElement x="490" y="0" width="60" height="30"/><textFieldExpression><![CDATA[$F{product_price}]]></textFieldExpression></textField>
+            <textField><reportElement x="550" y="0" width="40" height="30"/><textFieldExpression><![CDATA[$F{stock_qty}]]></textFieldExpression></textField>
+            <textField><reportElement x="590" y="0" width="80" height="30"/><textFieldExpression><![CDATA[$F{category_name}]]></textFieldExpression></textField>
+            <textField><reportElement x="670" y="0" width="80" height="30"/><textFieldExpression><![CDATA[$F{supplier_name}]]></textFieldExpression></textField>
+            <textField><reportElement x="750" y="0" width="50" height="30"/><textFieldExpression><![CDATA[$F{qty}]]></textFieldExpression></textField>
+            <textField><reportElement x="800" y="0" width="60" height="30"/><textFieldExpression><![CDATA[$F{unit_price}]]></textFieldExpression></textField>
+            <textField><reportElement x="860" y="0" width="60" height="30"/><textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression></textField>
+            <textField><reportElement x="920" y="0" width="60" height="30"/><textFieldExpression><![CDATA[$F{total_amount}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+
+</jasperReport>
