@@ -8,16 +8,16 @@ import supermarket.util.DBConnection;
 
 public class CustomerForm extends javax.swing.JFrame {
 
-    private final Color BG_DARK   = new Color(0x3B, 0x55, 0x70); // Navy
-    private final Color BG_PANEL  = new Color(0x49, 0x67, 0x6C); // Teal
-    private final Color BG_HEADER = new Color(0x7A, 0x3A, 0x65); // Plum
-    private final Color CLR_GREEN = new Color(0x88, 0xA4, 0xA7); // Sage
-    private final Color CLR_BLUE  = new Color(0x8F, 0x84, 0xAE); // Lavender
-    private final Color CLR_RED   = new Color(0x7A, 0x3A, 0x65); // Plum
-    private final Color CLR_GRAY  = new Color(0xE7, 0x9D, 0xB0); // Pink
+    private final Color BG_DARK   = new Color(0x3B, 0x55, 0x70); 
+    private final Color BG_PANEL  = new Color(0x49, 0x67, 0x6C); 
+    private final Color BG_HEADER = new Color(0x7A, 0x3A, 0x65); 
+    private final Color CLR_GREEN = new Color(0x88, 0xA4, 0xA7); 
+    private final Color CLR_BLUE  = new Color(0x8F, 0x84, 0xAE); 
+    private final Color CLR_RED   = new Color(0x7A, 0x3A, 0x65); 
+    private final Color CLR_GRAY  = new Color(0xE7, 0x9D, 0xB0); 
     private final Color TEXT_WHITE = new Color(255, 255, 255);
-    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); // Pink
-    private final Color INPUT_BG  = new Color(0x3B, 0x55, 0x70); // Navy
+    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); 
+    private final Color INPUT_BG  = new Color(0x3B, 0x55, 0x70); 
 
     private JTextField txtId, txtName, txtPhone, txtEmail;
     private JTable tblCustomers;
@@ -60,7 +60,7 @@ public class CustomerForm extends javax.swing.JFrame {
         JPanel headerPanel = new JPanel(new BorderLayout());
         headerPanel.setBackground(BG_HEADER);
         headerPanel.setBorder(BorderFactory.createEmptyBorder(15, 25, 15, 25));
-        JLabel titleLabel = new JLabel("👥  Customer Management");
+        JLabel titleLabel = new JLabel("Customer Management");
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 20));
         titleLabel.setForeground(TEXT_WHITE);
         JLabel subLabel = new JLabel("Add / Edit / Delete Customers");
