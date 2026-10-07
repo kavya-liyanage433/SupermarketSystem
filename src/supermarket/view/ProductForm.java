@@ -10,16 +10,16 @@ import java.awt.*;
 public class ProductForm extends javax.swing.JFrame {
 
     private ProductDAO productDAO = new ProductDAO();
-    private final Color BG_DARK   = new Color(23, 32, 56);
-    private final Color BG_PANEL  = new Color(30, 42, 74);
-    private final Color BG_HEADER = new Color(15, 20, 40);
-    private final Color CLR_GREEN = new Color(46, 204, 113);
-    private final Color CLR_BLUE  = new Color(52, 152, 219);
-    private final Color CLR_RED   = new Color(231, 76, 60);
-    private final Color CLR_GRAY  = new Color(100, 110, 130);
+    private final Color BG_DARK   = new Color(0x3B, 0x55, 0x70); // Navy
+    private final Color BG_PANEL  = new Color(0x49, 0x67, 0x6C); // Teal
+    private final Color BG_HEADER = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GREEN = new Color(0x88, 0xA4, 0xA7); // Sage
+    private final Color CLR_BLUE  = new Color(0x8F, 0x84, 0xAE); // Lavender
+    private final Color CLR_RED   = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GRAY  = new Color(0xE7, 0x9D, 0xB0); // Pink
     private final Color TEXT_WHITE = new Color(255, 255, 255);
-    private final Color TEXT_LIGHT = new Color(180, 200, 230);
-    private final Color INPUT_BG  = new Color(40, 55, 90);
+    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); // Pink
+    private final Color INPUT_BG  = new Color(0x3B, 0x55, 0x70); // Navy
 
     private JTextField txtProductId, txtName, txtPrice, txtStock;
     private JTable tblProducts;
@@ -45,7 +45,7 @@ public class ProductForm extends javax.swing.JFrame {
         tblProducts.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         tblProducts.setSelectionBackground(CLR_BLUE);
         tblProducts.setSelectionForeground(Color.WHITE);
-        tblProducts.setGridColor(new Color(50, 65, 100));
+        tblProducts.setGridColor(new Color(0x3B, 0x55, 0x70)); // Navy
         tblProducts.getTableHeader().setBackground(BG_HEADER);
         tblProducts.getTableHeader().setForeground(TEXT_LIGHT);
         tblProducts.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));
@@ -136,7 +136,7 @@ public class ProductForm extends javax.swing.JFrame {
             fields[i].setForeground(TEXT_WHITE);
             fields[i].setCaretColor(TEXT_WHITE);
             fields[i].setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(60, 80, 120), 1),
+                BorderFactory.createLineBorder(new Color(0x8F, 0x84, 0xAE), 1), // Lavender
                 BorderFactory.createEmptyBorder(4, 8, 4, 8)
             ));
             fields[i].setPreferredSize(new Dimension(250, 32));
@@ -144,7 +144,7 @@ public class ProductForm extends javax.swing.JFrame {
         }
         txtProductId = fields[0];
         txtProductId.setEditable(false);
-        txtProductId.setBackground(new Color(50, 65, 100));
+        txtProductId.setBackground(new Color(0x7A, 0x3A, 0x65)); // Plum
         txtName  = fields[1];
         txtPrice = fields[2];
         txtStock = fields[3];

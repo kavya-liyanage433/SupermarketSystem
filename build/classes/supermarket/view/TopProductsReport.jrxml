@@ -10,27 +10,27 @@
 	<title>
 		<band height="110">
 			<rectangle>
-				<reportElement x="0" y="0" width="555" height="110" backcolor="#0D0020" forecolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="0" width="555" height="110" backcolor="#3B5570" forecolor="#3B5570" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="8" width="555" height="45" forecolor="#FFFFFF" backcolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="8" width="555" height="45" forecolor="#FFFFFF" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="22" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SUPERMARKET MANAGEMENT SYSTEM]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="100" y="53" width="355" height="3" backcolor="#9B59B6" forecolor="#9B59B6" mode="Opaque"/>
+				<reportElement x="100" y="53" width="355" height="3" backcolor="#E79DB0" forecolor="#E79DB0" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="60" width="555" height="28" forecolor="#9B59B6" backcolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="60" width="555" height="28" forecolor="#E79DB0" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="15" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Top Selling Products Report]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="88" width="555" height="20" forecolor="#888888" backcolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="88" width="555" height="20" forecolor="#88A4A7" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
@@ -41,31 +41,31 @@
 	<columnHeader>
 		<band height="35">
 			<rectangle>
-				<reportElement x="0" y="0" width="555" height="35" backcolor="#6C3483" forecolor="#6C3483" mode="Opaque"/>
+				<reportElement x="0" y="0" width="555" height="35" backcolor="#7A3A65" forecolor="#7A3A65" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="0" width="160" height="35" forecolor="#FFFFFF" backcolor="#6C3483" mode="Opaque"/>
+				<reportElement x="0" y="0" width="160" height="35" forecolor="#FFFFFF" backcolor="#7A3A65" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Product Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="160" y="0" width="120" height="35" forecolor="#FFFFFF" backcolor="#6C3483" mode="Opaque"/>
+				<reportElement x="160" y="0" width="120" height="35" forecolor="#FFFFFF" backcolor="#7A3A65" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Sold]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="280" y="0" width="140" height="35" forecolor="#FFFFFF" backcolor="#6C3483" mode="Opaque"/>
+				<reportElement x="280" y="0" width="140" height="35" forecolor="#FFFFFF" backcolor="#7A3A65" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="11" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Total Revenue]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="420" y="0" width="135" height="35" forecolor="#FFFFFF" backcolor="#6C3483" mode="Opaque"/>
+				<reportElement x="420" y="0" width="135" height="35" forecolor="#FFFFFF" backcolor="#7A3A65" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="11" isBold="true"/>
 				</textElement>
@@ -83,38 +83,38 @@
 				<textFieldExpression class="java.lang.String"><![CDATA[$F{product_name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="160" y="0" width="120" height="28" forecolor="#9B59B6"/>
+				<reportElement x="160" y="0" width="120" height="28" forecolor="#8F84AE"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Long"><![CDATA[$F{total_sold}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="280" y="0" width="140" height="28" forecolor="#27AE60"/>
+				<reportElement x="280" y="0" width="140" height="28" forecolor="#49676C"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.String"><![CDATA["Rs. " + String.format("%.2f", $F{total_revenue})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="420" y="0" width="135" height="28" forecolor="#E74C3C"/>
+				<reportElement x="420" y="0" width="135" height="28" forecolor="#7A3A65"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{remaining_stock}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="27" width="555" height="1" forecolor="#E8DAEF"/>
+				<reportElement x="0" y="27" width="555" height="1" forecolor="#8F84AE"/>
 			</line>
 		</band>
 	</detail>
 	<summary>
 		<band height="50">
 			<rectangle>
-				<reportElement x="0" y="10" width="555" height="35" backcolor="#0D0020" forecolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="10" width="555" height="35" backcolor="#3B5570" forecolor="#3B5570" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="10" width="555" height="35" forecolor="#9B59B6" backcolor="#0D0020" mode="Opaque"/>
+				<reportElement x="0" y="10" width="555" height="35" forecolor="#E79DB0" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>

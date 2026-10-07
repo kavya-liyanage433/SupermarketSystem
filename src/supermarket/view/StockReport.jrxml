@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="StockReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
 	<queryString>
-		<![CDATA[SELECT p.product_id, p.name, p.price, p.stock_qty, c.name AS category_name, s.name AS supplier_name FROM product p JOIN category c ON p.category_id = c.category_id JOIN supplier s ON p.supplier_id = s.supplier_id ORDER BY p.stock_qty ASC]]>
+		<![CDATA[SELECT p.product_id, p.name, p.price, p.stock_qty, c.name AS category_name, s.name AS supplier_name FROM product p LEFT JOIN category c ON p.category_id = c.category_id LEFT JOIN supplier s ON p.supplier_id = s.supplier_id ORDER BY p.stock_qty ASC]]>
 	</queryString>
 	<field name="product_id" class="java.lang.Integer"/>
 	<field name="name" class="java.lang.String"/>
@@ -12,27 +12,27 @@
 	<title>
 		<band height="110">
 			<rectangle>
-				<reportElement x="0" y="0" width="555" height="110" backcolor="#0F1428" forecolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="0" width="555" height="110" backcolor="#3B5570" forecolor="#3B5570" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="8" width="555" height="45" forecolor="#FFFFFF" backcolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="8" width="555" height="45" forecolor="#FFFFFF" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="22" isBold="true"/>
 				</textElement>
 				<text><![CDATA[SUPERMARKET MANAGEMENT SYSTEM]]></text>
 			</staticText>
 			<rectangle>
-				<reportElement x="150" y="53" width="255" height="3" backcolor="#2ECC71" forecolor="#2ECC71" mode="Opaque"/>
+				<reportElement x="150" y="53" width="255" height="3" backcolor="#E79DB0" forecolor="#E79DB0" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="60" width="555" height="28" forecolor="#2ECC71" backcolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="60" width="555" height="28" forecolor="#E79DB0" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="15" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Stock / Inventory Report]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="88" width="555" height="20" forecolor="#7F8C8D" backcolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="88" width="555" height="20" forecolor="#88A4A7" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="9"/>
 				</textElement>
@@ -43,45 +43,45 @@
 	<columnHeader>
 		<band height="35">
 			<rectangle>
-				<reportElement x="0" y="0" width="555" height="35" backcolor="#1B5E20" forecolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="0" y="0" width="555" height="35" backcolor="#88A4A7" forecolor="#88A4A7" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="0" width="50" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="0" y="0" width="50" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="50" y="0" width="120" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="50" y="0" width="120" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Product Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="170" y="0" width="90" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="170" y="0" width="90" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Category]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="260" y="0" width="100" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="260" y="0" width="100" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Supplier]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="360" y="0" width="90" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="360" y="0" width="90" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<text><![CDATA[Price (Rs.)]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="450" y="0" width="105" height="35" forecolor="#FFFFFF" backcolor="#1B5E20" mode="Opaque"/>
+				<reportElement x="450" y="0" width="105" height="35" forecolor="#FFFFFF" backcolor="#88A4A7" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
@@ -120,31 +120,31 @@
 				<textFieldExpression><![CDATA[$F{supplier_name}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="360" y="0" width="90" height="28" forecolor="#27AE60"/>
+				<reportElement x="360" y="0" width="90" height="28" forecolor="#49676C"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[String.format("Rs. %.2f", $F{price})]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="450" y="0" width="105" height="28" forecolor="#E74C3C"/>
+				<reportElement x="450" y="0" width="105" height="28" forecolor="#7A3A65"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{stock_qty}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement x="0" y="27" width="555" height="1" forecolor="#E8F5E9"/>
+				<reportElement x="0" y="27" width="555" height="1" forecolor="#88A4A7"/>
 			</line>
 		</band>
 	</detail>
 	<summary>
 		<band height="50">
 			<rectangle>
-				<reportElement x="0" y="10" width="555" height="35" backcolor="#0F1428" forecolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="10" width="555" height="35" backcolor="#3B5570" forecolor="#3B5570" mode="Opaque"/>
 			</rectangle>
 			<staticText>
-				<reportElement x="0" y="10" width="555" height="35" forecolor="#FFFFFF" backcolor="#0F1428" mode="Opaque"/>
+				<reportElement x="0" y="10" width="555" height="35" forecolor="#FFFFFF" backcolor="#3B5570" mode="Opaque"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>

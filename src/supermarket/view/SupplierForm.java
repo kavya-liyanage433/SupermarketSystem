@@ -8,16 +8,16 @@ import supermarket.util.DBConnection;
 
 public class SupplierForm extends javax.swing.JFrame {
 
-    private final Color BG_DARK   = new Color(23, 32, 56);
-    private final Color BG_PANEL  = new Color(30, 42, 74);
-    private final Color BG_HEADER = new Color(15, 20, 40);
-    private final Color CLR_GREEN = new Color(46, 204, 113);
-    private final Color CLR_BLUE  = new Color(52, 152, 219);
-    private final Color CLR_RED   = new Color(231, 76, 60);
-    private final Color CLR_GRAY  = new Color(100, 110, 130);
+    private final Color BG_DARK   = new Color(0x3B, 0x55, 0x70); // Navy
+    private final Color BG_PANEL  = new Color(0x49, 0x67, 0x6C); // Teal
+    private final Color BG_HEADER = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GREEN = new Color(0x88, 0xA4, 0xA7); // Sage
+    private final Color CLR_BLUE  = new Color(0x8F, 0x84, 0xAE); // Lavender
+    private final Color CLR_RED   = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GRAY  = new Color(0xE7, 0x9D, 0xB0); // Pink
     private final Color TEXT_WHITE = new Color(255, 255, 255);
-    private final Color TEXT_LIGHT = new Color(180, 200, 230);
-    private final Color INPUT_BG  = new Color(40, 55, 90);
+    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); // Pink
+    private final Color INPUT_BG  = new Color(0x3B, 0x55, 0x70); // Navy
 
     private JTextField txtId, txtName, txtPhone, txtEmail, txtAddress;
     private JTable tblSuppliers;
@@ -105,14 +105,14 @@ public class SupplierForm extends javax.swing.JFrame {
             fields[i].setForeground(TEXT_WHITE);
             fields[i].setCaretColor(TEXT_WHITE);
             fields[i].setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(new Color(60, 80, 120), 1),
+                BorderFactory.createLineBorder(new Color(0x8F, 0x84, 0xAE), 1), // Lavender
                 BorderFactory.createEmptyBorder(4, 8, 4, 8)
             ));
             fields[i].setPreferredSize(new Dimension(250, 32));
             formPanel.add(fields[i], gbc);
         }
         txtId = fields[0]; txtId.setEditable(false);
-        txtId.setBackground(new Color(50, 65, 100));
+        txtId.setBackground(new Color(0x7A, 0x3A, 0x65)); // Plum
         txtName = fields[1]; txtPhone = fields[2];
         txtEmail = fields[3]; txtAddress = fields[4];
 
@@ -128,7 +128,7 @@ public class SupplierForm extends javax.swing.JFrame {
         tblSuppliers.setFont(new Font("Segoe UI", Font.PLAIN, 13));
         tblSuppliers.setSelectionBackground(CLR_BLUE);
         tblSuppliers.setSelectionForeground(Color.WHITE);
-        tblSuppliers.setGridColor(new Color(50, 65, 100));
+        tblSuppliers.setGridColor(new Color(0x3B, 0x55, 0x70)); // Navy
         tblSuppliers.getTableHeader().setBackground(BG_HEADER);
         tblSuppliers.getTableHeader().setForeground(TEXT_LIGHT);
         tblSuppliers.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 13));

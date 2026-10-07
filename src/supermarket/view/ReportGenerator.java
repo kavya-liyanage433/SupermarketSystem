@@ -10,16 +10,16 @@ import java.awt.*;
 
 public class ReportGenerator extends javax.swing.JFrame {
 
-    private final Color BG_DARK    = new Color(23, 32, 56);
-    private final Color BG_PANEL   = new Color(30, 42, 74);
-    private final Color BG_HEADER  = new Color(15, 20, 40);
-    private final Color CLR_GREEN  = new Color(46, 204, 113);
-    private final Color CLR_BLUE   = new Color(52, 152, 219);
-    private final Color CLR_RED    = new Color(231, 76, 60);
-    private final Color CLR_ORANGE = new Color(230, 126, 34);
-    private final Color CLR_PURPLE = new Color(155, 89, 182);
+    private final Color BG_DARK    = new Color(0x3B, 0x55, 0x70); // Navy
+    private final Color BG_PANEL   = new Color(0x49, 0x67, 0x6C); // Teal
+    private final Color BG_HEADER  = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GREEN  = new Color(0x88, 0xA4, 0xA7); // Sage
+    private final Color CLR_BLUE   = new Color(0x8F, 0x84, 0xAE); // Lavender
+    private final Color CLR_RED    = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_ORANGE = new Color(0xE7, 0x9D, 0xB0); // Pink
+    private final Color CLR_PURPLE = new Color(0x7A, 0x3A, 0x65); // Plum
     private final Color TEXT_WHITE = new Color(255, 255, 255);
-    private final Color TEXT_LIGHT = new Color(180, 200, 230);
+    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); // Pink
 
     private JLabel lblStatus;
     private final String BASE_PATH = "C:\\NetBeansProjects\\SupermarketSystem\\src\\supermarket\\view\\";
@@ -108,7 +108,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 14));
         titleLabel.setForeground(color);
 
-        JLabel descLabel = new JLabel("<html><p style='color:#b4c8e6;'>" +
+        JLabel descLabel = new JLabel("<html><p style='color:#e79db0;'>" +
             desc.replace("\n", "<br>") + "</p></html>");
         descLabel.setFont(new Font("Segoe UI", Font.PLAIN, 11));
 
@@ -126,7 +126,7 @@ public class ReportGenerator extends javax.swing.JFrame {
         Connection conn = null;
         try {
             lblStatus.setText("⏳ Generating " + reportName + "...");
-            lblStatus.setForeground(new Color(241, 196, 15));
+            lblStatus.setForeground(new Color(0x8F, 0x84, 0xAE)); // Lavender
 
             conn = DBConnection.getConnection();
             String reportPath = BASE_PATH + fileName;
@@ -137,7 +137,7 @@ public class ReportGenerator extends javax.swing.JFrame {
             JasperViewer.viewReport(jasperPrint, false);
 
             lblStatus.setText("✅ " + reportName + " generated successfully!");
-            lblStatus.setForeground(new Color(46, 204, 113));
+            lblStatus.setForeground(new Color(0x88, 0xA4, 0xA7)); // Sage
         } catch (Exception e) {
             lblStatus.setText("❌ Error: " + e.getMessage());
             lblStatus.setForeground(CLR_RED);

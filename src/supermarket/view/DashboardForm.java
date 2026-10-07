@@ -8,14 +8,14 @@ import java.awt.*;
 
 public class DashboardForm extends javax.swing.JFrame {
 
-    private final Color BG_DARK   = new Color(23, 32, 56);
-    private final Color BG_PANEL  = new Color(30, 42, 74);
-    private final Color BG_HEADER = new Color(15, 20, 40);
-    private final Color CLR_GREEN = new Color(46, 204, 113);
-    private final Color CLR_BLUE  = new Color(52, 152, 219);
-    private final Color CLR_RED   = new Color(231, 76, 60);
+    private final Color BG_DARK   = new Color(0x3B, 0x55, 0x70); // Navy
+    private final Color BG_PANEL  = new Color(0x49, 0x67, 0x6C); // Teal
+    private final Color BG_HEADER = new Color(0x7A, 0x3A, 0x65); // Plum
+    private final Color CLR_GREEN = new Color(0x88, 0xA4, 0xA7); // Sage
+    private final Color CLR_BLUE  = new Color(0x8F, 0x84, 0xAE); // Lavender
+    private final Color CLR_RED   = new Color(0x7A, 0x3A, 0x65); // Plum
     private final Color TEXT_WHITE = new Color(255, 255, 255);
-    private final Color TEXT_LIGHT = new Color(180, 200, 230);
+    private final Color TEXT_LIGHT = new Color(0xE7, 0x9D, 0xB0); // Pink
 
     private JLabel lblTotalSales, lblTotalProducts, lblTotalCustomers, lblRevenue;
 
@@ -66,19 +66,19 @@ public class DashboardForm extends javax.swing.JFrame {
         cardsPanel.setBackground(BG_DARK);
         cardsPanel.setBorder(BorderFactory.createEmptyBorder(25, 30, 15, 30));
 
-        JPanel card1 = createCard("Total Sales", "0", new Color(52, 152, 219), "📊");
+        JPanel card1 = createCard("Total Sales", "0", new Color(0x8F, 0x84, 0xAE), "📊"); // Lavender
         lblTotalSales = findValueLabel(card1);
         cardsPanel.add(card1);
 
-        JPanel card2 = createCard("Total Products", "0", new Color(46, 204, 113), "📦");
+        JPanel card2 = createCard("Total Products", "0", new Color(0x88, 0xA4, 0xA7), "📦"); // Sage
         lblTotalProducts = findValueLabel(card2);
         cardsPanel.add(card2);
 
-        JPanel card3 = createCard("Total Customers", "0", new Color(155, 89, 182), "👥");
+        JPanel card3 = createCard("Total Customers", "0", new Color(0xE7, 0x9D, 0xB0), "👥"); // Pink
         lblTotalCustomers = findValueLabel(card3);
         cardsPanel.add(card3);
 
-        JPanel card4 = createCard("Today's Revenue", "Rs. 0.00", new Color(231, 76, 60), "💰");
+        JPanel card4 = createCard("Today's Revenue", "Rs. 0.00", new Color(0x7A, 0x3A, 0x65), "💰"); // Plum
         lblRevenue = findValueLabel(card4);
         cardsPanel.add(card4);
 
@@ -92,9 +92,9 @@ public class DashboardForm extends javax.swing.JFrame {
         JButton btnProducts  = makeButton("📦  Manage Products",  CLR_BLUE);
         JButton btnSales     = makeButton("🛒  New Sale",         CLR_GREEN);
         JButton btnReport    = makeButton("📄  Reports",          CLR_RED);
-        JButton btnSuppliers = makeButton("🏭  Suppliers",        new Color(52, 73, 94));
-        JButton btnCustomers = makeButton("👥  Customers",        new Color(155, 89, 182));
-        JButton btnLogout    = makeButton("🚪  Logout",           new Color(100, 110, 130));
+        JButton btnSuppliers = makeButton("🏭  Suppliers",        new Color(0x49, 0x67, 0x6C)); // Teal
+        JButton btnCustomers = makeButton("👥  Customers",        new Color(0xE7, 0x9D, 0xB0)); // Pink
+        JButton btnLogout    = makeButton("🚪  Logout",           new Color(0x7A, 0x3A, 0x65)); // Plum
 
         btnProducts.addActionListener(e -> new ProductForm().setVisible(true));
         btnSales.addActionListener(e -> new SalesTransactionForm().setVisible(true));
@@ -124,7 +124,7 @@ public class DashboardForm extends javax.swing.JFrame {
 
     private JPanel createCard(String title, String value, Color color, String icon) {
         JPanel card = new JPanel(new BorderLayout());
-        card.setBackground(new Color(30, 42, 74));
+        card.setBackground(new Color(0x49, 0x67, 0x6C)); // Teal
         card.setBorder(BorderFactory.createCompoundBorder(
             BorderFactory.createLineBorder(color, 2),
             BorderFactory.createEmptyBorder(15, 15, 15, 15)
